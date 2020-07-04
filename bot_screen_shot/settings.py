@@ -83,7 +83,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'USER': os.environ.get('FOTO_BOT_DB_USER'),
         'NAME': os.environ.get('FOTO_BOT_DB_NAME'),
-        'PASSWORD': os.environ.get('FOTO_BOT_DB_PASSWORD'),
+        'PASSWORD': "kfnnsg1!J",
         'HOST': 'localhost',
         'PORT': '',
     }
