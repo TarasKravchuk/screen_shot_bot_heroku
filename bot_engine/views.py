@@ -22,9 +22,12 @@ BOT_TOKEN = os.environ.get('FOTO_BOT_TOKEN')
 def screen_shot_maker (url):
     filename = inspect.getframeinfo(inspect.currentframe()).filename
     chromeOptions = webdriver.ChromeOptions()
+    chromeOptions.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
     chromeOptions.add_argument("--headless")
+    chromeOptions.add_argument("--disable-dev-shm-usage")
+    chromeOptions.add_argument("--no-sandbox")
     chromeOptions.add_argument("--window-size=1920x1080")
-    driver = webdriver.Chrome(chrome_options=chromeOptions)
+    driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chromeOptions)
 
     driver.get(url)
     driver.set_window_size(1920, 1080)
